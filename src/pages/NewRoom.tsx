@@ -4,13 +4,13 @@ import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 
 import Button from '../components/Button';
-import { useAuthContext } from '../context/authContext';
+import useAuth from '../hooks/useAuth';
 
 import '../styles/auth.scss';
 
 const Home = () => {
   // const history = useHistory();
-  const {user} = useAuthContext();
+  const {user} = useAuth();
 
   // if(!user) {
   //   history.push('/');

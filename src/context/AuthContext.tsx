@@ -71,9 +71,4 @@ const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   )
 }
 
-const useAuthContext = () => {
-  const context = useContext(AuthContext);
-  return context;
-}
-
-export { AuthContextProvider, useAuthContext };
+export { AuthContextProvider, AuthContext };
