@@ -56,6 +56,13 @@
     align-self: center;
   }
 
+  h2 {
+    font: 700 24px 'Poppins', sans-serif;
+    line-height: 36px;
+    margin-top: 56px;
+    margin-bottom: 24px;
+  }
+
   form {
     input {
       height: 50px;
@@ -72,6 +79,17 @@
     button, input {
       width: 100%;
     }
+  }
+
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #737380;
+  }
+
+  a {
+    color: #E559F9;
   }
 }
 
