@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
-import Button from '../components/Button';
+import { Button } from '../components';
 
 import illustrationImg from '../assets/images/illustration.svg'; 
 import logoImg from '../assets/images/logo.svg';
