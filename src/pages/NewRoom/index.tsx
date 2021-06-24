@@ -2,24 +2,19 @@ import { useState } from 'react';
 import { FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import illustrationImg from '../assets/images/illustration.svg'; 
-import logoImg from '../assets/images/logo.svg';
+import useAuth from '../../hooks/useAuth';
+import { Button } from '../../components';
+import { database } from '../../services/firebase';
 
-import { Button } from '../components';
-import useAuth from '../hooks/useAuth';
-import { database } from '../services/firebase';
+import illustrationImg from '../../assets/images/illustration.svg'; 
+import logoImg from '../../assets/images/logo.svg';
 
-import '../styles/auth.scss';
+import './styles.scss';
 
 const Home = () => {
   const {user} = useAuth();
   const history = useHistory();
   const [newRoom, setNewRoom] = useState('');
-  
-  // const history = useHistory();
-  // if(!user) {
-  //   history.push('/');
-  // }
 
   const handleCreateRoom = async (event: FormEvent) => {
     event.preventDefault();

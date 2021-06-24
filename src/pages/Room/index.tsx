@@ -1,11 +1,11 @@
 import { FormEvent, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { database } from "../../services/firebase";
 
 import useAuth from "../../hooks/useAuth";
 import useRoom from "../../hooks/useRoom";
-
+import { database } from "../../services/firebase";
 import { Button, RoomCode, Question } from "../../components";
+
 import logoImg from "../../assets/images/logo.svg";
 
 import "./styles.scss";

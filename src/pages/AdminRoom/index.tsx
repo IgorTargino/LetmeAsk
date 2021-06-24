@@ -1,13 +1,13 @@
 import { useHistory, useParams } from "react-router-dom";
 
 import useRoom from "../../hooks/useRoom";
-
+import { database } from "../../services/firebase";
 import { RoomCode, Question, Button } from "../../components";
+
 import logoImg from "../../assets/images/logo.svg";
 import deleteImg from '../../assets/images/delete.svg';
 
 import "./styles.scss";
-import { database } from "../../services/firebase";
 
 type RoomParams = {
   id: string;
