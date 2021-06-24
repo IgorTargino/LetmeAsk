@@ -1,4 +1,5 @@
-import Button from '../components/Button'
-import RoomCode from '../components/RoomCode'
+import Button from './Button'
+import RoomCode from './RoomCode'
+import Question from './Question'
 
-export { Button, RoomCode };
+export { Button, RoomCode, Question };

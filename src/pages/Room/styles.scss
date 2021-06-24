@@ -12,6 +12,10 @@
 
       > img {
         max-height: 45px;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -97,6 +101,10 @@
           }
         }
       }
+    }
+
+    .question-list {
+      margin: 2rem 0;
     }
   }
 }

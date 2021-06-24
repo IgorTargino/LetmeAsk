@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text: #29292E;
+  --gray: #737380;
+  --purple: #835AFD;
+
+  --background-container: #fefefe;
+}
+
 body {
   background: #f8f8f8;
   color: #29292e;
