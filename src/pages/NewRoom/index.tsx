@@ -9,7 +9,7 @@ import { database } from '../../services/firebase';
 import illustrationImg from '../../assets/images/illustration.svg'; 
 import logoImg from '../../assets/images/logo.svg';
 
-import './styles.scss';
+import styles from './styles.module.scss';
 
 const Home = () => {
   const {user} = useAuth();
@@ -34,14 +34,14 @@ const Home = () => {
   }
 
   return (
-    <div id="page-auth">
+    <div className={styles.pageAuth}>
       <aside>
         <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
         <p>Tire as dúvidas da sua audiência em tempo real</p>
       </aside>
       <main>
-        <div className="main-content">
+        <div className={styles.mainContent}>
           <img src={logoImg} alt="Letmeask" />
           <h2>Crie uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>

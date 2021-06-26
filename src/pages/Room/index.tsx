@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import cx from 'classnames';
 
 import useAuth from "../../hooks/useAuth";
 import useRoom from "../../hooks/useRoom";
@@ -8,7 +9,7 @@ import { Button, RoomCode, Question } from "../../components";
 
 import logoImg from "../../assets/images/logo.svg";
 
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
 type RoomParams = {
   id: string;
@@ -69,15 +70,15 @@ const Room = () => {
   };
 
   return (
-    <div id="page-room">
+    <div className={styles.pageRoom}>
       <header>
-        <div className="content">
+        <div className={styles.content}>
           <img src={logoImg} alt="Letmeask" onClick={moveToHome} />
           <RoomCode code={roomId} />
         </div>
       </header>
       <main>
-        <div className="room-title">
+        <div className={styles.roomTitle}>
           <h1>Sala {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
@@ -87,9 +88,9 @@ const Room = () => {
             onChange={(event) => setNewQuestion(event.target.value)}
             value={newQuestion}
           />
-          <div className="form-footer">
+          <div className={styles.formFooter}>
             {user ? (
-              <div className="user-info">
+              <div className={styles.userInfo}>
                 <img src={user.avatar} alt={user.name} />
                 <span>{user.name}</span>
               </div>
@@ -104,7 +105,7 @@ const Room = () => {
           </div>
         </form>
 
-        <div className="question-list">
+        <div className={styles.questionList}>
           {questions.map((question) => {
             return (
               <Question
@@ -117,7 +118,9 @@ const Room = () => {
                 {!question.isAnswered && (
                   <button
                     type="button"
-                    className={`question-buttons ${question.likeId ? "active" : ""}`}
+                    className={cx(styles.questionButtons, 
+                      { active: question.likeId }
+                    )}
                     onClick={() =>
                       handleLikeQuestion(question.id, question.likeId)
                     }

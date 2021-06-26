@@ -1,19 +1,20 @@
-#page-auth {
+.pageAuth {
   display: flex;
   align-items: stretch;
   height: 100vh ;
 
+
   aside {
     flex: 7;
 
-    background: #835afd;
-    color: #fff;
+    background: var(--purple);
+    color: var(--primary-color);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    padding: 120px 80px;
+    padding: 7.5rem 5rem;
 
     img { 
       max-width: 320px;
@@ -29,7 +30,7 @@
       font-size: 1.5rem;
       line-height: 32px;
       margin-top: 1rem;
-      color: #f8f8f8;
+      color: var(--content);
     }
   }
 
@@ -42,9 +43,36 @@
     align-items: center;
     justify-content: center;
   }
+
+
+  @media (max-width: 768px) {
+    text-align: center;
+
+    aside {
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+      img {
+        max-width: 160px;
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 375px) {
+
+    aside {
+      gap: 1rem;
+      padding: 3.5rem 2rem;
+    }
+  }
 }
 
-.main-content {
+.mainContent {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -52,15 +80,13 @@
   align-items: stretch;
   text-align: center;
 
-  > img {
-    align-self: center;
+  @media (max-width: 425px) {
+    height: 100vh;
+    justify-content: center;
   }
 
-  h2 {
-    font: 700 1.5rem 'Poppins', sans-serif;
-    line-height: 36px;
-    margin-top: 3.5rem;
-    margin-bottom: 1.5rem;
+  > img {
+    align-self: center;
   }
 
   form {
@@ -68,7 +94,7 @@
       height: 50px;
       border-radius: 8px;
       padding: 0 1rem;
-      background: #fff;
+      background: var(--primary-color);
       border: 1px solid #a8a8b3;
     }
 
@@ -80,26 +106,15 @@
       width: 100%;
     }
   }
-
-  p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.875rem;
-    line-height: 16px;
-    color: #737380;
-  }
-
-  a {
-    color: #E559F9;
-  }
 }
 
-.create-room {
+.createRoom {
   margin-top: 4rem;
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
   background: #ea4335;
-  color: #fff;
+  color: var(--primary-color);
 
   display: flex;
   justify-content: center;

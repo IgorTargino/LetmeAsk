@@ -11,9 +11,14 @@
   border-radius: 8px;
 
   color: #fff;
-  background: #835AFD;
+  background: var(--purple);
 
   transition: filter 0.2s;
+
+  @media (max-width: 375px) {
+    height: 35px;
+    padding: 0 1rem;
+  }
 
   &:not(:disabled):hover {
     filter: brightness(0.9)

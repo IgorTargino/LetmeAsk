@@ -1,4 +1,4 @@
-#page-auth {
+.pageAuth {
   display: flex;
   align-items: stretch;
   height: 100vh ;
@@ -6,8 +6,8 @@
   aside {
     flex: 7;
 
-    background: #835afd;
-    color: #fff;
+    background: var(--purple);
+    color: var(--primary-color);
 
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
       font-size: 1.5rem;
       line-height: 32px;
       margin-top: 1rem;
-      color: #f8f8f8;
+      color: var(--content);
     }
   }
 
@@ -42,15 +42,46 @@
     align-items: center;
     justify-content: center;
   }
+
+  @media (max-width: 768px) {
+    text-align: center;
+
+    aside {
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 160px;
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 375px) {
+
+    aside {
+      gap: 1rem;
+      padding: 3.5rem 2rem;
+    }
+  }
+  
 }
 
-.main-content {
+.mainContent {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 320px;
   align-items: stretch;
   text-align: center;
+
+  @media (max-width: 425px) {
+    height: 100vh;
+    justify-content: center;
+  }
 
   > img {
     align-self: center;
@@ -68,7 +99,7 @@
       height: 50px;
       border-radius: 8px;
       padding: 0 1rem;
-      background: #fff;
+      background: var(--primary-color);
       border: 1px solid #a8a8b3;
     }
 
@@ -91,56 +122,11 @@
   a {
     color: #E559F9;
   }
-}
 
-.create-room {
-  margin-top: 4rem;
-  height: 50px;
-  border-radius: 8px;
-  font-weight: 500;
-  background: #ea4335;
-  color: #fff;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
-  border: 0;
-
-  transition: filter 0.2s;
-
-  img {
-    margin-right: 0.5rem;
-  }
-
-  &:hover {
-    filter: brightness(0.9);
-  }
-}
-
-.separator {
-  font-size: 0.875rem;
-  color: #a8a8b3;
-
-  margin: 2rem 0;
-  display: flex;
-  align-items: center;
-
-  &::before {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: #a8a8b3;
-    margin-right: 1rem;
-  }
-
-  &::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: #a8a8b3;
-    margin-left: rem;
+  @media (max-width: 768px) {
+    p {
+      margin-top: 0.5rem;
+    }
   }
 }
 

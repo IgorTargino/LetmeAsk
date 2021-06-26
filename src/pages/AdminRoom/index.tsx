@@ -1,4 +1,5 @@
 import { useHistory, useParams } from "react-router-dom";
+import cx from 'classnames';
 
 import useRoom from "../../hooks/useRoom";
 import { database } from "../../services/firebase";
@@ -7,7 +8,7 @@ import { RoomCode, Question, Button } from "../../components";
 import logoImg from "../../assets/images/logo.svg";
 import deleteImg from "../../assets/images/delete.svg";
 
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
 type RoomParams = {
   id: string;
@@ -70,9 +71,9 @@ const AdminRoom = () => {
   };
 
   return (
-    <div id="page-room">
+    <div className={styles.pageRoom}>
       <header>
-        <div className="content">
+        <div className={styles.content}>
           <img src={logoImg} alt="Letmeask" onClick={moveToHome} />
           <div>
             <RoomCode code={roomId} />
@@ -81,11 +82,11 @@ const AdminRoom = () => {
         </div>
       </header>
       <main>
-        <div className="room-title">
+        <div className={styles.roomTitle}>
           <h1>Sala {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
-        <div className="question-list">
+        <div className={styles.questionList}>
           {questions.map((question) => {
             return (
               <Question
@@ -97,7 +98,9 @@ const AdminRoom = () => {
               >
                 <button
                   type="button"
-                  className={`${question.isAnswered ? "active" : ""}`}
+                  className={cx("question-buttons", 
+                    { active: question.likeId }
+                  )}
                   onClick={() =>
                     handleCheckQuestionAsAnswered(
                       question.id,
@@ -134,7 +137,7 @@ const AdminRoom = () => {
                 {!question.isAnswered && (
                   <button
                     type="button"
-                    className={`${question.isHighlighted ? "active" : ""}`}
+                    className={question.isHighlighted ? "active" : ""}
                     onClick={() =>
                       handleHighlightQuestion(
                         question.id,

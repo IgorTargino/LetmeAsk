@@ -2,7 +2,7 @@
   padding: 1.5rem;
   border-radius: 8px;
 
-  background: var(--background-container);
+  background: var(--background);
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.04);
 
   & + .question {
@@ -37,13 +37,13 @@
     .user-info {
       display: flex;
       align-items: center;
-  
+
       img {
         height: 32px;
         width: 32px;
         border-radius: 50%;
       }
-  
+
       span {
         margin-left: 0.5rem;
         color: #737380;
@@ -53,32 +53,48 @@
 
     div:nth-child(2) {
       display: flex;
+      align-items: center;
       gap: 1rem;
+
+      @media (max-width: 425px) {
+        gap: 0.5rem;
+      }
+
+      @media (max-width: 375px) {
+        gap: 0.25rem;
+      }
+
+      span {
+        align-self: flex-end;
+      }
     }
 
     button {
+      display: flex;
+      gap: 0.5rem;
       border: 0;
       background: transparent;
-      gap: 0.5rem;
       transition: filter 0.2s;
-  
+
       &.question-buttons {
         display: flex;
         align-items: flex-end;
+        justify-content: center;
         color: var(--gray);
       }
 
       &.active {
         color: var(--purple);
-        
-        svg path, svg circle{
+
+        svg path,
+        svg circle {
           stroke: var(--purple);
         }
       }
-    
+
       &:hover {
         filter: brightness(0.7);
       }
-    }    
+    }
   }
 }

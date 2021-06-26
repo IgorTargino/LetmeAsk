@@ -6,17 +6,26 @@
 
 :root {
   --text: #29292E;
+  --content: #f8f8f8;
   --gray: #737380;
   --purple: #835AFD;
 
+  --primary-color: #fff;
+  --secondary-color: #000;
+  --background: #fefefe;
   --background-question-highlighted: #F4F0FF;
   --background-question-answered: #DBDCDD;
-  --background-container: #fefefe;
+}
+
+html {
+  @media (max-width: 375px) {
+    font-size: 93.75%; // 15px
+  }
 }
 
 body {
   background: #f8f8f8;
-  color: #29292e;
+  color: var(--text);
 }
 
 body, input, button, textarea {

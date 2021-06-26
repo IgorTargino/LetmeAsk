@@ -9,7 +9,7 @@ import illustrationImg from "../../assets/images/illustration.svg";
 import logoImg from "../../assets/images/logo.svg";
 import googleIcon from "../../assets/images/google-icon.svg";
 
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
 const Home = () => {
   const history = useHistory();
@@ -47,23 +47,23 @@ const Home = () => {
   };
 
   return (
-    <div id="page-auth">
+    <div className={styles.pageAuth}>
       <aside>
         <img
           src={illustrationImg}
           alt="Ilustração simbolizando perguntas e respostas"
         />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>TIre as dúvidas da sua audiência em tempo real</p>
+        <p>Tire as dúvidas da sua audiência em tempo real</p>
       </aside>
       <main>
-        <div className="main-content">
+        <div className={styles.mainContent}>
           <img src={logoImg} alt="Letmeask" />
-          <button onClick={handleCreateRoom} className="create-room">
+          <button onClick={handleCreateRoom} className={styles.createRoom}>
             <img src={googleIcon} alt="Logo do google" />
             Crie sua sala com o Google
           </button>
-          <div className="separator">ou entre em um sala</div>
+          <div className={styles.separator}>ou entre em um sala</div>
           <form onSubmit={handleJoinRoom}>
             <input
               type="text"

@@ -1,4 +1,4 @@
-#page-room {
+.pageRoom {
   header {
     padding: 1.5rem;
     border-bottom: 1px solid #e2e2e2;
@@ -10,6 +10,11 @@
       justify-content: space-between;
       align-items: center;
 
+      @media (max-width: 425px) {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
       > img {
         max-height: 45px;
 
@@ -18,22 +23,30 @@
         }
       }
     }
+
   }
 
   main {
     max-width: 800px;
     margin: 0 auto;
 
-    .room-title {
+    .roomTitle {
       margin: 2rem 0 1.5rem;
       display: flex;
       align-items: center;
       gap: 1rem;
 
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+
+      @media (max-width: 375px) {
+        flex-direction: column;
+      }
 
       h1 {
         font: 700 1.5rem 'Poppins', sans-serif;
-        color: #29292E;
+        color: var(--text);
       }
 
       span {
@@ -42,8 +55,9 @@
         border-radius: 50px;
 
         background: #E559F9;
-        color: #f8f8f8;
+        color: var(--content);
       }
+      
     }
 
     form {
@@ -56,17 +70,17 @@
         border-radius: 0.5rem;
         border: 0;
 
-        background: #fefefe;
+        background: var(--background);
         box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.04);
       }
 
-      .form-footer {
+      .formFooter {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-top: 1rem;
 
-        .user-info {
+        .userInfo {
           display: flex;
           align-items: center;
 
@@ -78,7 +92,7 @@
 
           span {
             margin-left: 0.5rem;
-            color: #737380;
+            color: var(--gray);
             font-weight: 500;
             font-size: 0.875rem;
           }
@@ -87,7 +101,7 @@
         > span {
           font-size: 0.875rem;
           font-weight: 500;
-          color: #737380;
+          color: var(--gray)
 
           button {
             font-size: 0.875rem;
@@ -96,15 +110,23 @@
             background:transparent;
             border: 0;
 
-            color: #835AFD;
+            color: var(--purple);
             text-decoration: underline;
           }
         }
       }
+
+      @media (max-width: 768px) {
+        padding: 0 2rem;
+      }
     }
 
-    .question-list {
+    .questionList {
       margin: 2rem 0;
+
+      @media (max-width: 768px) {
+        padding: 0 2rem;
+      }
     }
   }
 }

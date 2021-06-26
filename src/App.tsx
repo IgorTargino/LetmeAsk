@@ -3,7 +3,7 @@ import { AuthContextProvider } from "./context/AuthContext";
 
 import { Home, NewRoom, AdminRoom, Room } from "./pages";
 
-import "./styles/global.scss";
+import "./styles/global.module.scss";
 
 function App() {
   return (
