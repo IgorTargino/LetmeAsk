@@ -4,13 +4,13 @@
   overflow: hidden;
 
   background: #fff;
-  border: 1px solid #835AFD;
+  border: 1px solid var(--purple);
   
   display: flex;
   align-items: center;
 
   div {
-    background: #835AFD;
+    background: var(--purple);
     padding: 0 0.75rem;
     height: 100%;
 
