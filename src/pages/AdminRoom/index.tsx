@@ -12,7 +12,8 @@ import {
 } from "../../components";
 
 import logoImg from "../../assets/images/logo.svg";
-import logoDarkImg from '../../assets/images/logo-dark.svg';
+import logoDarkImg from "../../assets/images/logo-dark.svg";
+import perguntasImg from "../../assets/images/perguntas.svg";
 
 import styles from "./styles.module.scss";
 import useTheme from "../../hooks/useTheme";
@@ -68,7 +69,11 @@ const AdminRoom = () => {
     <div className={styles.pageRoom}>
       <header>
         <div className={styles.content}>
-          <img src={isDark ? logoDarkImg : logoImg} alt="Letmeask" onClick={moveToHome} />
+          <img
+            src={isDark ? logoDarkImg : logoImg}
+            alt="Letmeask"
+            onClick={moveToHome}
+          />
           <div className={styles.buttons}>
             <div>
               <RoomCode code={roomId} />
@@ -85,7 +90,16 @@ const AdminRoom = () => {
           <h1>Sala {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
-
+        {questions.length === 0 && (
+          <div className={styles.nothingQuestions}>
+            <img src={perguntasImg} alt="Nenhuma pergunta" />
+            <strong>Nenhuma pergunta por aqui...</strong>
+            <p>
+              Envie o código desta sala para seus amigos e comece a respoder
+              perguntas!
+            </p>
+          </div>
+        )}
         <div className={styles.questionList}>
           {questions
             .sort((b, a) => a.likeCount - b.likeCount)

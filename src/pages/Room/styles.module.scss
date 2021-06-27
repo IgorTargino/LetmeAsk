@@ -145,6 +145,39 @@
       }
     }
 
+    .nothingQuestions {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      max-width: 350px;
+      margin: 0 auto;
+
+      @media (max-width: 425px) {
+        padding: 2rem 1rem;
+      }
+
+      img {
+        width: 150px;
+        height: 150px;
+
+        margin-bottom: 1rem;
+      }
+
+      strong {
+        font: 600 1.125rem 'Poppins', sans-serif;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: var(--gray);
+        font-size: 0.875rem;
+      }
+    }
+
     .questionList {
       margin: 2rem 0;
 

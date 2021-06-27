@@ -10,6 +10,7 @@ import { Button, RoomCode, Question } from "../../components";
 
 import logoImg from "../../assets/images/logo.svg";
 import logoDarkImg from "../../assets/images/logo-dark.svg";
+import perguntasImg from "../../assets/images/perguntas.svg";
 
 
 
@@ -115,7 +116,16 @@ const Room = () => {
             </Button>
           </div>
         </form>
-
+        {questions.length === 0 && (
+          <div className={styles.nothingQuestions}>
+            <img src={perguntasImg} alt="Nenhuma pergunta" />
+            <strong>Nenhuma pergunta por aqui...</strong>
+            <p>
+              Envie o código desta sala para seus amigos e comece a respoder
+              perguntas!
+            </p>
+          </div>
+        )}
         <div className={styles.questionList}>
           {questions
             .sort((b, a) => a.likeCount - b.likeCount)
