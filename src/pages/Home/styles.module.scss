@@ -143,15 +143,15 @@
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
-  background: var(--red-google);
-  color: var(--content);
+  background: var(--background);
+  border: 1px solid var(--border-details);
+  color: var(--text);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   cursor: pointer;
-  border: 0;
 
   transition: filter 0.2s;
 

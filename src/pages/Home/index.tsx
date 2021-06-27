@@ -10,6 +10,7 @@ import illustrationImg from "../../assets/images/illustration.svg";
 import logoDarkImg from "../../assets/images/logo-dark.svg"
 import logoImg from "../../assets/images/logo.svg";
 import googleIcon from "../../assets/images/google-icon.svg";
+import entrarImg from "../../assets/images/entrar.svg";
 
 import styles from "./styles.module.scss";
 import useTheme from "../../hooks/useTheme";
@@ -78,7 +79,10 @@ const Home = () => {
               onChange={(event) => setRoomCode(event.target.value)}
               value={roomCode}
             />
-            <Button type="submit">Entrar na sala</Button>
+            <Button type="submit"> 
+              <img src={entrarImg} alt="Entrar na sala" />
+              Entrar na sala
+            </Button>
           </form>
         </div>
       </main>
