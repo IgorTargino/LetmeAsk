@@ -1,46 +1,134 @@
-# Getting Started with Create React App
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/IgorTargino/podcastr?color=%2304D361&style=flat">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorTargino/podcastr?style=flat">
+  
+  <a href="https://github.com/IgorTargino/podcastr/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IgorTargino/podcastr?style=flat">
+  </a>
+    
+   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat">
+  
+</p>
 
-## Available Scripts
+## 🧐 Sobre o projeto
 
-In the project directory, you can run:
+A aplicação consite ajudar os criadores de conteúdo a colocarem dúvidas com um sistema de classificação baseado em likes e highlights.
+<a align="center" target="blank" href="https://letmeask-c1f7a.web.app/">
+    <img alt="Site LetMeAsk" src="https://img.shields.io/static/v1?label=site&message=LetMeAsk&color=4953B8&style=flat&logo=vercel">
+</a>
 
-### `yarn start`
+## 🎨 Layout
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Telas Mobile
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<div align="center">
+  <img width="100%" src="./.github/mobile.png"/>
+</div>
 
-### `yarn test`
+### Telas Desktop-light
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div align="center">
+  <img width="100%" src="./.github/desktop-light.png"/>
+</div>
 
-### `yarn build`
+### Telas Desktop-dark
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<div align="center">
+  <img width="100%" src="./.github/desktop-dark.png"/>
+</div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Funcionalidades 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] Autenticação com google;
+- [x] Criação de sala;
+- [x] Input para inserção novas perguntas;
+- [x] Sistema de likes para perguntas;
+- [x] Destaque para pergunta que esta sendo respondida (Highlighted);
+- [x] Destaque para perguntas que já foram respondidas (Answered);
+- [x] Exclusão de perguntas;
+- [x] Encerramento de sala;
+## ⚙️ Milha Extra
+- [x] Responsividade;
+- [x] Dark mode;
+- [x] Modal para remoçao de perguntas ou encerramento de sala;
+- [x] Rankeamento de perguntas por highlights e número de likes;
+- [x] Perguntas respondidas são enviadas para o fim da lista; 
 
-### `yarn eject`
+## Como executar o projeto
+### Pré-requisitos
+- git 
+- Node.js
+- NPM ou Yarn
+### Variáveis de Ambiente
+Além das ferramentas anteriores é necessário criar o arquivo .env.local na raiz do projeto e adicionar as seguintes variáveis
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+REACT_APP_API_KEY="AIzaSyB1DYALyajve7WWoRpyb1FytC9CsUggRcg"
+REACT_APP_AUTH_DOMAIN="letmeask-c1f7a.firebaseapp.com"
+REACT_APP_DATABASE_URL="https://letmeask-c1f7a-default-rtdb.firebaseio.com"
+REACT_APP_PROJECT_ID="letmeask-c1f7a"
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Caso você deseje alterar as variáveis ambientes você só precisa usar um banco de dados em tempo real com estas regras:
+```
+{
+  "rules": {
+    "rooms": {
+      ".read": false,
+      ".write": "auth != null",
+      "$roomId": {
+        ".read": true,
+        ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
+        "questions": {
+          ".read": true,
+          ".write": "auth != null && (!data.exists() || data.parent().child('authorId').val() == auth.id)",
+          "likes": {
+            ".read": true,
+            ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)"
+          }
+        }
+      }
+    }
+  }
+}
+```
+### Instalação
+```
+# Abra o terminal e copie este repositório com o comando
+$ git clone https://github.com/IgorTargino/LetmeAsk.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Acesse a pasta do projeto no prompt de comando 
+$ cd LetmeAsk
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Instale as dependências
+yarn install
+ou
+$ npm install
 
-## Learn More
+# Execute a aplicação
+$ yarn start
+ou
+$ npm run start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Acesse http://localhost:3000 no seu navagador.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+## 🚀 Tecnologias 
+Tecnologias utilizadas para desenvolver o projeto:
+- react.js
+- typescript
+- firebase
+- context
+- sass
+## 🦸‍♂️ **Autor**
+
+<p>
+ <sub><strong>🌟 Igor Targino Marinho🌟</strong></sub>
+</p>
+
+[![Linkedin Badge](https://img.shields.io/badge/-IgorTargino-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/igor-targino/)](https://www.linkedin.com/in/igor-targino/)
+[![Gmail Badge](https://img.shields.io/badge/-igortargino01@gmail.com-c14438?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:igortargino01@gmail.com)](mailto:igortargino01@gmail.com)
+
+>Este projeto foi desenvolvido por **[Igor Targino](https://github.com/IgorTargino)**
+Se gostou, dá ⭐, vai me ajudar 😉
