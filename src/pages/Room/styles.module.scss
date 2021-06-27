@@ -1,7 +1,7 @@
 .pageRoom {
   header {
     padding: 1.5rem;
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid var(--border);
 
     .content {
       max-width: 1128px;
@@ -34,14 +34,26 @@
       margin: 2rem 0 1.5rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 1rem;
 
       @media (max-width: 768px) {
-        justify-content: center;
+        padding: 0 2rem;
       }
 
-      @media (max-width: 375px) {
-        flex-direction: column;
+      @media (max-width: 425px) {
+        flex-direction: row;
+      }
+      > div {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
+
+      @media (max-width: 320px) {
+        > div {
+          flex-direction: column;
+        }
       }
 
       h1 {
@@ -54,8 +66,14 @@
         padding: 0.5rem 1rem;
         border-radius: 50px;
 
-        background: #E559F9;
+        background: var(--pink);
         color: var(--content);
+      }
+
+      button {
+        background: transparent;
+        color: var(--secondary-color);
+        border: 0;
       }
       
     }
@@ -70,7 +88,8 @@
         border-radius: 0.5rem;
         border: 0;
 
-        background: var(--background);
+        color: var(--secondary-color);
+        background: var(--background-container);
         box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.04);
       }
 

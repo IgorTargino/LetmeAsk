@@ -12,7 +12,7 @@ type QuestionProps = {
   children?: ReactNode;
   isAnswered?: boolean;
   isHighlighted?: boolean;
-};
+}
 
 const Question = ({
   author,
@@ -26,7 +26,7 @@ const Question = ({
       className={cx(
         "question",
         { answered: isAnswered },
-        { highlighted: isHighlighted && !isAnswered}
+        { highlighted: isHighlighted && !isAnswered }
       )}
     >
       <p>{content}</p>

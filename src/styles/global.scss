@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #29292E;
+  --content: #f8f8f8;
+  --gray: #737380;
+  --gray-light: #DBDCDD;
+  --purple: #835AFD;
+  --pink: #E559F9;
+  --red: #E73F5D;
+  --red-google: #ea4335;
+
+  --border: #e2e2e2;
+
+  --primary-color: #fff;
+  --secondary-color: #000;
+
+  --overlay: #050206CC;
+  --background-modal: #fff;
+
+  --background: #f8f8f8;
+  --background-container: #fefefe;
+  --background-question: #fefefe;
+  --background-question-highlighted: #F4F0FF;
+  --background-question-answered: #DBDCDD;
+}
+
+:root.dark {
+  --text: #f8f8f8;
+  --content: #B8B8B8;
+  --gray: #737380;
+  --gray-light: #DBDCDD;
+  --purple: #530891;
+  --pink: #aa1bec;
+  --red: #8a0e24;
+  --red-google: #a81d10;
+
+  --border: #575454;
+  
+  --primary-color: #000;
+  --secondary-color: #fff;
+  
+  --overlay: #050206CC;
+  --background-modal: #000;
+  
+  --background: #111111;
+  --background-container: #222;
+  --background-question: #222;
+  --background-question-highlighted: #222454;
+  --background-question-answered: #222333;
+}
+
+html {
+  @media (max-width: 375px) {
+    font-size: 93.75%; // 15px
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+body, input, button, textarea {
+  font: 400 16px 'Roboto', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}

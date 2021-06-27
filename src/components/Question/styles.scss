@@ -2,7 +2,7 @@
   padding: 1.5rem;
   border-radius: 8px;
 
-  background: var(--background);
+  background: var(--background-container);
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.04);
 
   & + .question {
@@ -86,8 +86,7 @@
       &.active {
         color: var(--purple);
 
-        svg path,
-        svg circle {
+        svg path, svg circle {
           stroke: var(--purple);
         }
       }

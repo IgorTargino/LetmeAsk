@@ -3,18 +3,22 @@
   align-items: stretch;
   height: 100vh ;
 
-
   aside {
     flex: 7;
 
     background: var(--purple);
-    color: var(--primary-color);
+    color: var(--text);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     padding: 7.5rem 5rem;
+
+    @media (max-width: 425px) {
+      height: 100vh;
+      justify-content: center;
+    }
 
     img { 
       max-width: 320px;
@@ -44,7 +48,6 @@
     justify-content: center;
   }
 
-
   @media (max-width: 768px) {
     text-align: center;
 
@@ -61,10 +64,14 @@
 
   @media (max-width: 425px) {
     flex-direction: column;
+
+    aside {
+      min-height: 100vh;
+    }
+
   }
 
   @media (max-width: 375px) {
-
     aside {
       gap: 1rem;
       padding: 3.5rem 2rem;
@@ -94,6 +101,8 @@
       height: 50px;
       border-radius: 8px;
       padding: 0 1rem;
+
+      color: var(--text);
       background: var(--primary-color);
       border: 1px solid #a8a8b3;
     }
@@ -113,8 +122,8 @@
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
-  background: #ea4335;
-  color: var(--primary-color);
+  background: var(--red-google);
+  color: var(--content);
 
   display: flex;
   justify-content: center;
