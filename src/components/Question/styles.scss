@@ -84,10 +84,10 @@
       }
 
       &.active {
-        color: var(--purple);
+        color: var(--pink);
 
         svg path, svg circle {
-          stroke: var(--purple);
+          stroke: var(--pink);
         }
       }
 

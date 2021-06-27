@@ -3,9 +3,17 @@
   align-items: stretch;
   height: 100vh ;
 
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 425px) {
+   display: flex; 
+  }
+
   aside {
     flex: 7;
-
     background: var(--purple);
     color: var(--content);
 
@@ -14,6 +22,10 @@
     justify-content: center;
 
     padding: 7.5rem 5rem;
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+    }
 
     @media (max-width: 425px) {
       height: 100vh;
