@@ -15,6 +15,7 @@
   --red-google: #ea4335;
 
   --border: #e2e2e2;
+  --border-details: #a8a8b3;
 
   --primary-color: #fff;
   --secondary-color: #000;
@@ -24,7 +25,6 @@
 
   --background: #f8f8f8;
   --background-container: #fefefe;
-  --background-question: #fefefe;
   --background-question-highlighted: #F4F0FF;
   --background-question-answered: #DBDCDD;
 }
@@ -34,12 +34,13 @@
   --content: #B8B8B8;
   --gray: #737380;
   --gray-light: #DBDCDD;
-  --purple: #530891;
+  --purple: #7818c7;
   --pink: #aa1bec;
   --red: #8a0e24;
   --red-google: #a81d10;
 
   --border: #575454;
+  --border-details: #555555;
   
   --primary-color: #000;
   --secondary-color: #fff;
@@ -47,9 +48,8 @@
   --overlay: #050206CC;
   --background-modal: #000;
   
-  --background: #111111;
-  --background-container: #222;
-  --background-question: #222;
+  --background: #000;
+  --background-container: #131213;
   --background-question-highlighted: #222454;
   --background-question-answered: #222333;
 }
@@ -61,7 +61,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: var( --background);
   color: var(--text);
 }
 

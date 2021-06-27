@@ -12,6 +12,7 @@ import {
 } from "../../components";
 
 import logoImg from "../../assets/images/logo.svg";
+import logoDarkImg from '../../assets/images/logo-dark.svg';
 
 import styles from "./styles.module.scss";
 import useTheme from "../../hooks/useTheme";
@@ -67,25 +68,24 @@ const AdminRoom = () => {
     <div className={styles.pageRoom}>
       <header>
         <div className={styles.content}>
-          <img src={logoImg} alt="Letmeask" onClick={moveToHome} />
-          <div>
-            <RoomCode code={roomId} />
-            <ModalDeleteRoom roomId={roomId} />
+          <img src={isDark ? logoDarkImg : logoImg} alt="Letmeask" onClick={moveToHome} />
+          <div className={styles.buttons}>
+            <div>
+              <RoomCode code={roomId} />
+              <ModalDeleteRoom roomId={roomId} />
+            </div>
+            <button type="button" onClick={toggleDarkMode}>
+              {isDark ? <FaMoon /> : <FaSun />}
+            </button>
           </div>
         </div>
       </header>
       <main>
         <div className={styles.roomTitle}>
-          <div>
-            <h1>Sala {title}</h1>
-            {questions.length > 0 && (
-              <span>{questions.length} pergunta(s)</span>
-            )}
-          </div>
-          <button type="button" onClick={toggleDarkMode}>
-            {isDark ? <FaMoon /> : <FaSun />}
-          </button>
+          <h1>Sala {title}</h1>
+          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
+
         <div className={styles.questionList}>
           {questions
             .sort((b, a) => a.likeCount - b.likeCount)

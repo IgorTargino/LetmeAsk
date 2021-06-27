@@ -7,7 +7,7 @@
     flex: 7;
 
     background: var(--purple);
-    color: var(--text);
+    color: var(--content);
 
     display: flex;
     flex-direction: column;
@@ -17,7 +17,16 @@
 
     @media (max-width: 425px) {
       height: 100vh;
-      justify-content: center;
+    }
+
+    > button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+
+      border: 0;
+      color: var(--secondary-color);
+      background: transparent;
     }
 
     img { 
@@ -103,8 +112,8 @@
       padding: 0 1rem;
 
       color: var(--text);
-      background: var(--primary-color);
-      border: 1px solid #a8a8b3;
+      background: var(--background);
+      border: 1px solid var(--border-details);
     }
 
     button {
@@ -145,7 +154,7 @@
 
 .separator {
   font-size: 0.875rem;
-  color: #a8a8b3;
+  color: var(--border-details);
 
   margin: 2rem 0;
   display: flex;
@@ -155,7 +164,7 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: #a8a8b3;
+    background: var(--border-details);
     margin-right: 1rem;
   }
 
@@ -163,7 +172,7 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: #a8a8b3;
+    background: var(--border-details);
     margin-left: 1rem;
   }
 }

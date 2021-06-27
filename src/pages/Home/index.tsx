@@ -4,17 +4,21 @@ import { useHistory } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { Button } from "../../components";
 import { database } from "../../services/firebase";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 import illustrationImg from "../../assets/images/illustration.svg";
+import logoDarkImg from "../../assets/images/logo-dark.svg"
 import logoImg from "../../assets/images/logo.svg";
 import googleIcon from "../../assets/images/google-icon.svg";
 
 import styles from "./styles.module.scss";
+import useTheme from "../../hooks/useTheme";
 
 const Home = () => {
   const history = useHistory();
   const [roomCode, setRoomCode] = useState("");
   const { signInWithGoogle, user } = useAuth();
+  const { toggleDarkMode, isDark } = useTheme();
 
   const handleCreateRoom = async () => {
     if (!user) {
@@ -38,8 +42,8 @@ const Home = () => {
       return;
     }
 
-    if (roomRef.val().endedAt){
-      alert('Room already closed.');
+    if (roomRef.val().endedAt) {
+      alert("Room already closed.");
       return;
     }
 
@@ -49,6 +53,9 @@ const Home = () => {
   return (
     <div className={styles.pageAuth}>
       <aside>
+        <button type="button" onClick={toggleDarkMode}>
+          {isDark ? <FaMoon /> : <FaSun />}
+        </button>
         <img
           src={illustrationImg}
           alt="Ilustração simbolizando perguntas e respostas"
@@ -58,7 +65,7 @@ const Home = () => {
       </aside>
       <main>
         <div className={styles.mainContent}>
-          <img src={logoImg} alt="Letmeask" />
+          <img src={isDark ? logoDarkImg : logoImg} alt="Letmeask" />
           <button onClick={handleCreateRoom} className={styles.createRoom}>
             <img src={googleIcon} alt="Logo do google" />
             Crie sua sala com o Google
