@@ -13,7 +13,7 @@
 
 ## 🧐 Sobre o projeto
 
-A aplicação consite ajudar os criadores de conteúdo a colocarem dúvidas com um sistema de classificação baseado em likes e highlights.
+A aplicação consite ajudar os criadores de conteúdo a colocarem dúvidas com um sistema de classificação baseado em likes e highlights. <br>
 <a align="center" target="blank" href="https://letmeask-c1f7a.web.app/">
     <img alt="Site LetMeAsk" src="https://img.shields.io/static/v1?label=site&message=LetMeAsk&color=4953B8&style=flat&logo=vercel">
 </a>
