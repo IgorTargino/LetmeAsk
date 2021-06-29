@@ -120,12 +120,24 @@
             font-weight: 500;
             font-size: 0.875rem;
           }
+
+          button {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+            
+            background:transparent;
+            border: 0;
+
+            color: var(--purple);
+            text-decoration: underline;
+          }
         }
 
         > span {
           font-size: 0.875rem;
           font-weight: 500;
-          color: var(--gray)
+          color: var(--gray);
 
           button {
             font-size: 0.875rem;

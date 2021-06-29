@@ -1,7 +1,8 @@
 import cx from "classnames";
+import toast, { Toaster } from "react-hot-toast";
 import { FormEvent, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { useHistory, useParams } from "react-router-dom";
 
 import useAuth from "../../hooks/useAuth";
 import useRoom from "../../hooks/useRoom";
@@ -12,8 +13,6 @@ import logoImg from "../../assets/images/logo.svg";
 import logoDarkImg from "../../assets/images/logo-dark.svg";
 import perguntasImg from "../../assets/images/perguntas.svg";
 
-
-
 import styles from "./styles.module.scss";
 import useTheme from "../../hooks/useTheme";
 
@@ -22,15 +21,35 @@ type RoomParams = {
 };
 
 const Room = () => {
-  const { user } = useAuth();
   const history = useHistory();
   const params = useParams<RoomParams>();
-  const [newQuestion, setNewQuestion] = useState("");
+  const { user, signInWithGoogle, signOut } = useAuth();
   const { toggleDarkMode, isDark } = useTheme();
+  const [newQuestion, setNewQuestion] = useState("");
 
   const roomId = params.id;
   const { questions, title } = useRoom(roomId);
 
+  const moveToHome = () => {
+    history.push("/");
+  };
+
+  const loginWithGoogle = async () => {
+    if (!user) {
+      await signInWithGoogle();
+      history.push(`/rooms/${roomId}`)
+
+      toast.success('Login feito com sucesso!')
+    }
+  }
+
+  const singOutAccount = async () => {
+    if (user) {
+      await signOut();
+      history.push('/');
+    }
+  }
+ 
   const handleSendQuesiton = async (event: FormEvent) => {
     event.preventDefault();
 
@@ -55,6 +74,7 @@ const Room = () => {
     await database.ref(`/rooms/${roomId}/questions`).push(question);
 
     setNewQuestion("");
+    toast.success('Pergunta criada!')
   };
 
   const handleLikeQuestion = async (
@@ -72,14 +92,11 @@ const Room = () => {
     }
   };
 
-  const moveToHome = () => {
-    history.push("/");
-  };
-
   return (
     <div className={styles.pageRoom}>
       <header>
         <div className={styles.content}>
+          <Toaster />
           <img src={isDark ? logoDarkImg : logoImg} alt="Letmeask" onClick={moveToHome} />
           <div>
             <RoomCode code={roomId} />
@@ -105,10 +122,11 @@ const Room = () => {
               <div className={styles.userInfo}>
                 <img src={user.avatar} alt={user.name} />
                 <span>{user.name}</span>
+                <button onClick={singOutAccount}>(sair)</button>
               </div>
             ) : (
               <span>
-                Para enviar uma pergunta, <button>faça seu login</button>
+                Para enviar uma pergunta, <button onClick={loginWithGoogle}>faça seu login</button>
               </span>
             )}
             <Button type="submit" disabled={!user}>
