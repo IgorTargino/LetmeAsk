@@ -15,4 +15,4 @@ const ButtonToggleTheme = () => {
   );
 };
 
-export default ButtonToggleTheme;
+export { ButtonToggleTheme };

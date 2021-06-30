@@ -1,22 +1,21 @@
 import cx from "classnames";
-import useRoom from "../../hooks/useRoom";
-import { database } from "../../services/firebase";
 import { useHistory, useParams } from "react-router-dom";
-import { FaMoon, FaSun } from "react-icons/fa";
 
-import {
-  RoomCode,
-  Question,
-  ModalDeleteRoom,
-  ModalRemoveQuestion,
-} from "../../components";
+import { RoomCode } from "../../components/RoomCode";
+import { Question } from "../../components/Question";
+import { ModalDeleteRoom } from "../../components/ModalDeleteRoom";
+import { ModalRemoveQuestion } from "../../components/ModalRemoveQuestion";
+
+import useRoom from "../../hooks/useRoom";
+import useTheme from "../../hooks/useTheme";
+import { database } from "../../services/firebase";
 
 import logoImg from "../../assets/images/logo.svg";
 import logoDarkImg from "../../assets/images/logo-dark.svg";
 import perguntasImg from "../../assets/images/perguntas.svg";
 
 import styles from "./styles.module.scss";
-import useTheme from "../../hooks/useTheme";
+import { ButtonToggleTheme } from "../../components/ButtonToggleTheme";
 
 type RoomParams = {
   id: string;
@@ -28,7 +27,7 @@ const AdminRoom = () => {
   const roomId = params.id;
 
   const { questions, title } = useRoom(roomId);
-  const { toggleDarkMode, isDark } = useTheme();
+  const { isDark } = useTheme();
 
   const moveToHome = () => {
     history.push("/");
@@ -79,9 +78,7 @@ const AdminRoom = () => {
               <RoomCode code={roomId} />
               <ModalDeleteRoom roomId={roomId} />
             </div>
-            <button type="button" onClick={toggleDarkMode}>
-              {isDark ? <FaMoon /> : <FaSun />}
-            </button>
+            <ButtonToggleTheme />
           </div>
         </div>
       </header>
@@ -195,4 +192,4 @@ const AdminRoom = () => {
   );
 };
 
-export default AdminRoom;
+export { AdminRoom };

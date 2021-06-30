@@ -104,36 +104,6 @@
         justify-content: space-between;
         margin-top: 1rem;
 
-        .userInfo {
-          display: flex;
-          align-items: center;
-
-          img {
-            height: 32px;
-            width: 32px;
-            border-radius: 50%;
-          }
-
-          span {
-            margin-left: 0.5rem;
-            color: var(--gray);
-            font-weight: 500;
-            font-size: 0.875rem;
-          }
-
-          button {
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-left: 0.5rem;
-            
-            background:transparent;
-            border: 0;
-
-            color: var(--purple);
-            text-decoration: underline;
-          }
-        }
-
         > span {
           font-size: 0.875rem;
           font-weight: 500;

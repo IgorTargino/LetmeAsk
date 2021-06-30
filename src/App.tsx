@@ -1,8 +1,11 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import { Home } from "./pages/Home";
+import { AdminRoom } from "./pages/AdminRoom";
+import { Room } from "./pages/Room";
+
 import { AuthContextProvider } from "./context/AuthContext";
 import { ThemeContextProvider } from "./context/ThemeContext";
-
-import { Home, AdminRoom, Room } from "./pages";
 
 import "./styles/global.scss";
 

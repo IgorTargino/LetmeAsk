@@ -1,18 +1,21 @@
 import { useState, FormEvent } from "react";
 import { useHistory } from "react-router-dom";
 
+import { Button } from "../../components/Button";
+import { UserProfile } from "../../components/UserProfile";
+import { ButtonToggleTheme } from "../../components/ButtonToggleTheme";
+
 import useAuth from "../../hooks/useAuth";
-import { ButtonToggleTheme, UserProfile, Button } from "../../components";
+import useTheme from "../../hooks/useTheme";
 import { database } from "../../services/firebase";
 
-import illustrationImg from "../../assets/images/illustration.svg";
-import logoDarkImg from "../../assets/images/logo-dark.svg";
 import logoImg from "../../assets/images/logo.svg";
-import googleIcon from "../../assets/images/google-icon.svg";
 import entrarImg from "../../assets/images/entrar.svg";
+import logoDarkImg from "../../assets/images/logo-dark.svg";
+import googleIcon from "../../assets/images/google-icon.svg";
+import illustrationImg from "../../assets/images/illustration.svg";
 
 import styles from "./styles.module.scss";
-import useTheme from "../../hooks/useTheme";
 
 const Home = () => {
   const history = useHistory();
@@ -90,7 +93,6 @@ const Home = () => {
             <img src={isDark ? logoDarkImg : logoImg} alt="Letmeask" />
             <button
               onClick={signInWithGoogle}
-              className={styles.buttonCreateRoom}
             >
               <img src={googleIcon} alt="Logo do google" />
               Crie sua sala com o Google
@@ -154,4 +156,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export { Home };

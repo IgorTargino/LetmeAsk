@@ -41,4 +41,4 @@ const Question = ({
   );
 };
 
-export default Question;
+export { Question };

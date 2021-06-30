@@ -1,11 +1,13 @@
-import { useState } from 'react';
 import Modal from 'react-modal';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import { Button } from '../Button';
 import { database } from '../../services/firebase';
 
-import Button from '../Button'
-import styles from './styles.module.scss';
 import endRoomImg from '../../assets/images/end-room.svg'
+
+import styles from './styles.module.scss';
 
 type Props = {
   roomId: string;
@@ -51,4 +53,4 @@ const ModalDeleteRoom = (props: Props) => {
   )
 }
 
-export default ModalDeleteRoom;
+export { ModalDeleteRoom };

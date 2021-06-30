@@ -24,4 +24,4 @@ const RoomCode = (props: RoomCodeProps) => {
   )
 }
 
-export default RoomCode;
+export { RoomCode };

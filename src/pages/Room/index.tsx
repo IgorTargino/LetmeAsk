@@ -1,20 +1,24 @@
 import cx from "classnames";
 import toast, { Toaster } from "react-hot-toast";
 import { FormEvent, useState } from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
 import { useHistory, useParams } from "react-router-dom";
 
 import useAuth from "../../hooks/useAuth";
 import useRoom from "../../hooks/useRoom";
+import useTheme from "../../hooks/useTheme";
 import { database } from "../../services/firebase";
-import { Button, RoomCode, Question } from "../../components";
+
+import { Button } from "../../components/Button";
+import { RoomCode } from "../../components/RoomCode";
+import { Question } from "../../components/Question";
+import { UserProfile } from "../../components/UserProfile";
+import { ButtonToggleTheme } from "../../components/ButtonToggleTheme";
 
 import logoImg from "../../assets/images/logo.svg";
 import logoDarkImg from "../../assets/images/logo-dark.svg";
 import perguntasImg from "../../assets/images/perguntas.svg";
 
 import styles from "./styles.module.scss";
-import useTheme from "../../hooks/useTheme";
 
 type RoomParams = {
   id: string;
@@ -23,8 +27,8 @@ type RoomParams = {
 const Room = () => {
   const history = useHistory();
   const params = useParams<RoomParams>();
-  const { user, signInWithGoogle, signOut } = useAuth();
-  const { toggleDarkMode, isDark } = useTheme();
+  const { user, signInWithGoogle } = useAuth();
+  const { isDark } = useTheme();
   const [newQuestion, setNewQuestion] = useState("");
 
   const roomId = params.id;
@@ -38,13 +42,6 @@ const Room = () => {
     if (!user) {
       await signInWithGoogle();
       history.push(`/rooms/${roomId}`)
-    }
-  }
-
-  const singOutAccount = async () => {
-    if (user) {
-      await signOut();
-      history.push('/');
     }
   }
  
@@ -98,9 +95,7 @@ const Room = () => {
           <img src={isDark ? logoDarkImg : logoImg} alt="Letmeask" onClick={moveToHome} />
           <div>
             <RoomCode code={roomId} />
-            <button type="button" onClick={toggleDarkMode}>
-              {isDark ? <FaMoon /> : <FaSun />}
-            </button>
+            <ButtonToggleTheme />
           </div>
         </div>
       </header>
@@ -117,11 +112,7 @@ const Room = () => {
           />
           <div className={styles.formFooter}>
             {user ? (
-              <div className={styles.userInfo}>
-                <img src={user.avatar} alt={user.name} />
-                <span>{user.name}</span>
-                <button onClick={singOutAccount}>(sair)</button>
-              </div>
+              <UserProfile />
             ) : (
               <span>
                 Para enviar uma pergunta, <button onClick={loginWithGoogle}>faça seu login</button>
@@ -196,4 +187,4 @@ const Room = () => {
   );
 };
 
-export default Room;
+export { Room };

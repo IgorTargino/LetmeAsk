@@ -2,7 +2,7 @@ import Modal from "react-modal";
 import { useState } from "react";
 
 import { database } from "../../services/firebase";
-import Button from "../Button";
+import { Button } from "../Button";
 
 import removeQuestionImg from "../../assets/images/remove-question.svg";
 import deleteImg from "../../assets/images/delete.svg";
@@ -55,4 +55,4 @@ const ModalRemoveQuestion = ({questionId, roomId}: Props) => {
   );
 };
 
-export default ModalRemoveQuestion;
+export { ModalRemoveQuestion };
