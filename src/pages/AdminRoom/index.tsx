@@ -1,12 +1,15 @@
 import cx from "classnames";
+import { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 
 import { RoomCode } from "../../components/RoomCode";
 import { Question } from "../../components/Question";
 import { ModalDeleteRoom } from "../../components/ModalDeleteRoom";
 import { ModalRemoveQuestion } from "../../components/ModalRemoveQuestion";
+import { ButtonToggleTheme } from "../../components/ButtonToggleTheme";
 
 import useRoom from "../../hooks/useRoom";
+import useAuth from "../../hooks/useAuth";
 import useTheme from "../../hooks/useTheme";
 import { database } from "../../services/firebase";
 
@@ -15,7 +18,6 @@ import logoDarkImg from "../../assets/images/logo-dark.svg";
 import perguntasImg from "../../assets/images/perguntas.svg";
 
 import styles from "./styles.module.scss";
-import { ButtonToggleTheme } from "../../components/ButtonToggleTheme";
 
 type RoomParams = {
   id: string;
@@ -26,8 +28,16 @@ const AdminRoom = () => {
   const history = useHistory();
   const roomId = params.id;
 
-  const { questions, title } = useRoom(roomId);
+  const { user } = useAuth();
+
+  const { questions, title, authorId } = useRoom(roomId);
   const { isDark } = useTheme();
+
+  useEffect(() => {
+    if(user?.id !== authorId){
+      history.push('/');
+    }
+  }, [authorId, user])
 
   const moveToHome = () => {
     history.push("/");
