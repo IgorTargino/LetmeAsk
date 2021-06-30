@@ -67,6 +67,8 @@ const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 
   const signOut = async () => {
     await firebase.auth().signOut()
+
+    setUser(undefined);
   }
 
   return (
