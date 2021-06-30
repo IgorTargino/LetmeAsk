@@ -1,6 +1,6 @@
 import cx from "classnames";
-import toast, { Toaster } from "react-hot-toast";
 import { FormEvent, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useHistory, useParams } from "react-router-dom";
 
 import useAuth from "../../hooks/useAuth";

@@ -8,6 +8,7 @@ import removeQuestionImg from "../../assets/images/remove-question.svg";
 import deleteImg from "../../assets/images/delete.svg";
 
 import styles from "./styles.module.scss";
+import toast from "react-hot-toast";
 
 type Props = {
   questionId: string;
@@ -27,6 +28,7 @@ const ModalRemoveQuestion = ({questionId, roomId}: Props) => {
       .remove();
 
     togleStateModalRemoveQuestion();
+    toast.success('Pergunta excluída');
   };
 
   return (

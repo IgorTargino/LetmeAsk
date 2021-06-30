@@ -8,6 +8,7 @@ import { database } from '../../services/firebase';
 import endRoomImg from '../../assets/images/end-room.svg'
 
 import styles from './styles.module.scss';
+import toast from 'react-hot-toast';
 
 type Props = {
   roomId: string;
@@ -19,6 +20,7 @@ const ModalDeleteRoom = (props: Props) => {
 
   const toggleStateModalDeleteRoom = () => {
     setModalDeleteRoomIsOpen(!modalDeleteRoomIsOpen);
+
   };
 
   const handleEndRoom = async () => {
@@ -27,6 +29,7 @@ const ModalDeleteRoom = (props: Props) => {
     });
 
     history.push("/");
+    toast.success('Sala encerrada')
   };
 
   return (

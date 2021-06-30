@@ -1,5 +1,6 @@
 import { useState, FormEvent } from "react";
 import { useHistory } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 import { Button } from "../../components/Button";
 import { UserProfile } from "../../components/UserProfile";
@@ -36,12 +37,12 @@ const Home = () => {
     const roomRef = await database.ref(`/rooms/${roomCode}`).get();
 
     if (!roomRef.exists()) {
-      alert("Room does not exist.");
+      toast.error("A sala não existe");
       return;
     }
 
     if (roomRef.val().endedAt) {
-      alert("Room already closed.");
+      toast.error("A sala foi encerrada.");
       return;
     }
 
@@ -78,6 +79,7 @@ const Home = () => {
       <header>
         {user && <UserProfile />}
         <ButtonToggleTheme />
+        <Toaster />
       </header>
       <aside>
         <img

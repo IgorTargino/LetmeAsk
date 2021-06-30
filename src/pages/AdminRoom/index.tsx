@@ -16,7 +16,7 @@ import logoDarkImg from "../../assets/images/logo-dark.svg";
 import perguntasImg from "../../assets/images/perguntas.svg";
 
 import styles from "./styles.module.scss";
-import toast from "react-hot-toast";
+import toast, {Toaster} from "react-hot-toast";
 
 type RoomParams = {
   id: string;
@@ -70,6 +70,7 @@ const AdminRoom = () => {
     <div className={styles.pageRoom}>
       <header>
         <div className={styles.content}>
+          <Toaster />
           <img
             src={isDark ? logoDarkImg : logoImg}
             alt="Letmeask"
