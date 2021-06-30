@@ -150,6 +150,7 @@ const Room = () => {
                   {!question.isAnswered && (
                     <button
                       type="button"
+                      disabled={!user}
                       className={cx(styles.questionButtons, {
                         active: question.likeId,
                       })}
