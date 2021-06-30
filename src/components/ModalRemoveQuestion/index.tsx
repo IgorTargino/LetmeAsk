@@ -31,7 +31,7 @@ const ModalRemoveQuestion = ({questionId, roomId}: Props) => {
 
   return (
     <>
-      <button type="button" onClick={() => togleStateModalRemoveQuestion()}>
+      <button type="button" onClick={togleStateModalRemoveQuestion}>
         <img src={deleteImg} alt="Remover pergunta" />
       </button>
       <Modal
