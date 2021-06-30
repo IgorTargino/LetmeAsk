@@ -38,8 +38,6 @@ const Room = () => {
     if (!user) {
       await signInWithGoogle();
       history.push(`/rooms/${roomId}`)
-
-      toast.success('Login feito com sucesso!')
     }
   }
 

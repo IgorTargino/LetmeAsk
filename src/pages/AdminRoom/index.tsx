@@ -17,7 +17,6 @@ import perguntasImg from "../../assets/images/perguntas.svg";
 
 import styles from "./styles.module.scss";
 import useTheme from "../../hooks/useTheme";
-import useAuth from "../../hooks/useAuth";
 
 type RoomParams = {
   id: string;
@@ -25,7 +24,6 @@ type RoomParams = {
 
 const AdminRoom = () => {
   const params = useParams<RoomParams>();
-  const { user, signOut } = useAuth();
   const history = useHistory();
   const roomId = params.id;
 
@@ -35,13 +33,6 @@ const AdminRoom = () => {
   const moveToHome = () => {
     history.push("/");
   };
-
-  const singOutAccount = async () => {
-    if (user) {
-      await signOut();
-      history.push('/');
-    }
-  }
 
   const handleCheckQuestionAsAnswered = async (
     questionId: string,
