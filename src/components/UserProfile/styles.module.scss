@@ -10,17 +10,18 @@
   }
 
   span {
-    margin-right: 0.5rem;
-    color: var(--gray);
-    font-weight: 500;
+    margin-right: 0.25rem;
     font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray);
   }
 
   button {
     margin-right: 0.5rem;
 
     border: 0;
+    border-radius: 50px;
     background: transparent;
-    color: var(--purple);
+    color: var(--pink);
   }
 }
