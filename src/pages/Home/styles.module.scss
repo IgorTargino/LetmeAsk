@@ -11,6 +11,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @media (max-width: 425px) {
+      padding-right: 1rem;
+      background: #423f1033;
+      border-radius: 30px;
+    }
   }
 
   aside {
