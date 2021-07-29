@@ -1,10 +1,10 @@
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/IgorTargino/letmeask?color=%2304D361&style=flat">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/IgorTargino/LetmeAsk?color=%2304D361&style=flat">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorTargino/letmeask?style=flat">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/IgorTargino/LetmeAsk?style=flat">
   
-  <a href="https://github.com/IgorTargino/letmeask/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IgorTargino/letmeask?style=flat">
+  <a href="https://github.com/IgorTargino/LetmeAsk/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/IgorTargino/LetmeAsk?style=flat">
   </a>
     
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat">
