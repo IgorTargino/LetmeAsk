@@ -63,10 +63,10 @@ A aplicação consiste em ajudar os criadores de conteúdo a colocarem dúvidas,
 Além das ferramentas anteriores é necessário criar o arquivo .env.local na raiz do projeto e adicionar as seguintes variáveis
 
 ```
-REACT_APP_API_KEY="AIzaSyB1DYALyajve7WWoRpyb1FytC9CsUggRcg"
-REACT_APP_AUTH_DOMAIN="letmeask-c1f7a.firebaseapp.com"
-REACT_APP_DATABASE_URL="https://letmeask-c1f7a-default-rtdb.firebaseio.com"
-REACT_APP_PROJECT_ID="letmeask-c1f7a"
+REACT_APP_API_KEY=
+REACT_APP_AUTH_DOMAIN="
+REACT_APP_DATABASE_URL=
+REACT_APP_PROJECT_ID=
 ```
 
 Caso você deseje alterar as variáveis ambientes você só precisa usar um banco de dados em tempo real com estas regras:
