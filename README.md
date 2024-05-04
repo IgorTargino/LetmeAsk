@@ -48,7 +48,6 @@ A aplicação consiste em ajudar os criadores de conteúdo a colocarem dúvidas,
 - [x] Destaque para perguntas que já foram respondidas (Answered);
 - [x] Exclusão de perguntas;
 - [x] Encerramento de sala;
-## ⚙️ Milha Extra
 - [x] Responsividade;
 - [x] Dark mode;
 - [x] Modal para remoçao de perguntas ou encerramento de sala;
